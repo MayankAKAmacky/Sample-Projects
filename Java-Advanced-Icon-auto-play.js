@@ -96,9 +96,10 @@ function updateScore() {
 let isAutoPlaying = false;
 let intervalID;
 
+
 function autoPlay() {
   if (!isAutoPlaying) {
-    intervalID = setInterval(function () {
+    intervalID = setInterval( () => {
       let playerMove = pickComputerMove();
       playGame(playerMove);
     }, 1000);

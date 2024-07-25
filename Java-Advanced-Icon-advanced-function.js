@@ -92,3 +92,19 @@ function updateScore() {
     ".js-score"
   ).innerHTML = `Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}.`;
 }
+
+let isAutoPlaying = false;
+let intervalID;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalID = setInterval(function () {
+      let playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalID);
+    isAutoPlaying = false;
+  }
+}

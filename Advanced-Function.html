@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Function</title>
+    <style>
+        button{
+            height: 100px;
+            width: 200px;
+            font-size: 30px;
+            font-family: 'inter';
+            font-weight: bold;
+            text-transform: uppercase;
+
+        }
+    </style>
 </head>
 <body>
-    
+     <button onclick="" ondblclick="" class="js-button">click</button>
 
     <script>
         /*
@@ -61,7 +72,7 @@
         }, 3000);
 
         console.log('next line')
-*/
+
 
         ['make dinner',
         'wash dishes',
@@ -115,6 +126,52 @@
         const onLine = () => 2 + 3;
 
         console.log(oneLine())
+
+        const oobject2 = {
+            method: () => {
+
+            },
+            method() {
+
+            }
+
+        };
+        */
+
+       const buttonElement = document.querySelector('.js-button')
+
+       const eventListener = () => {
+        console.log('click')
+    }
+
+        buttonElement.addEventListener('click', eventListener);
+        
+        buttonElement.removeEventListener('click',eventListener);
+
+        buttonElement.addEventListener('click', () => {
+            console.log('click2')
+        });
+
+
+        buttonElement.addEventListener('click', () => {
+            buttonElement.style.backgroundColor = 'red';
+            buttonElement.innerHTML = 'double click now';
+        });
+        
+        
+        buttonElement.addEventListener('dblclick', () => {
+            buttonElement.style.backgroundColor = 'blue';
+            buttonElement.innerHTML = 'single click now'
+        });
+        
+        buttonElement.addEventListener('keydown', () => {
+            buttonElement.style.backgroundColor = 'yellow';
+            buttonElement.innerHTML = 'leave me'
+        });
+
+
+
+
     </script>
 </body>
 </html>
